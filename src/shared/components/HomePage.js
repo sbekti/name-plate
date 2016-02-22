@@ -9,20 +9,29 @@ class HomePage extends React.Component {
     super(props)
 
     this.state = {
-      status: 'loading...'
+      status: 'loading...',
+      timestamp: '',
+      timeAgo: ''
     }
 
     socket.on('status', (data) => {
+      let timestamp = new Date().toISOString()
+
       this.setState({
-        status: data
+        status: data,
+        timestamp: timestamp
       })
     })
+
+    setInterval(() => {
+      this.setState({
+        timeAgo: $.timeago(this.state.timestamp)
+      })
+    }, 1000)
   }
 
   _toggleFullscreen() {
     let elem = document.documentElement
-
-    console.log('haha')
 
     if (!document.fullscreenElement && !document.mozFullScreenElement &&
       !document.webkitFullscreenElement && !document.msFullscreenElement) {
@@ -63,6 +72,7 @@ class HomePage extends React.Component {
           <h1>sabekti</h1>
           <h2>Samudra Harapan Bekti</h2>
           <h4>I am {this.state.status}</h4>
+          <p>Updated {this.state.timeAgo}</p>
           <div className='options'>
             <Link to={'/ping'} className='btn btn-default'>Ping me!</Link>
           </div>

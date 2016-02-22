@@ -8,6 +8,8 @@ const app = express()
 const server = http.Server(app)
 const io = socketio(server)
 
+let status = ''
+
 app.set('env', process.env.NODE_ENV || 'development')
 app.set('host', process.env.HOST || '0.0.0.0')
 app.set('port', process.env.PORT || 5000)
@@ -29,9 +31,11 @@ app.use((err, req, res, next) => {
 
 io.on('connection', (socket) => {
   console.log('Got a new connection from client.')
+  socket.emit('status', status)
 
   socket.on('status', (data) => {
-    io.emit('status', data)
+    status = data
+    io.emit('status', status)
   })
 })
 

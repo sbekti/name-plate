@@ -6,7 +6,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
+* {
   font-family: source sans pro, sans-serif;
 }
 
@@ -24,15 +24,13 @@ h2 {
 
 h4 {
   margin-top: 2.5em;
+  font-size: 2em;
   font-weight: 300;
 }
 
-.options {
-  margin-top: 1.6em;
-}
-
-.bold {
-  font-weight: 600;
+p {
+  font-size: 1em;
+  font-weight: 300;
 }
 
 .display-picture {
