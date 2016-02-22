@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700');
+
+* {
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: source sans pro, sans-serif;
+}
+
+h1 {
+  font-size: 3.5em;
+  color: #25a;
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+h4 {
+  margin-top: 2.5em;
+  font-weight: 300;
+}
+
+.options {
+  margin-top: 1.6em;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.display-picture {
+  margin-top: 1.5em;
+}
+
+.logo {
+  margin-top: 1.2em;
+  height: 3em;
+}
